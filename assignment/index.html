@@ -7,6 +7,18 @@
 
     <title>EZIHIRE</title>
     <link rel='stylesheet' href='styles.css'>
+    <link rel="icon" href="./design-6/image/EZIhire.png" type="png">
+
+    <!-- Add Slick CSS -->
+    <!-- <link rel="stylesheet" type="text/css" href="path/to/slick/slick.css" /> -->
+
+    <!-- Add Slick JS -->
+    <!-- <script src="./node_modules/jquery/src/jquery.js"></script>
+    <script src="path/to/slick/slick.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="./node_modules/slick-1.8.1/slick/slick.min.js"></script> -->
+
 </head>
 
 <body>
@@ -15,6 +27,7 @@
             <div class="logo">
                 <img src="/design-6/image/EZIhire.png" alt="Logo">
             </div>
+            <button class="tgbtn" id="toggleButton">&#9776;</button>
             <ul>
                 <li><a href="#" style="color: rgb(105, 128, 233);"><b>Why Us</b></a></li>
                 <li><a href="#">Technology</a></li>
@@ -24,12 +37,58 @@
                 <li><a href="#">FAQs</a></li>
             </ul>
         </nav>
+
+        <script>document.addEventListener('DOMContentLoaded', function () {
+                const button = document.getElementById('toggleButton');
+                const navUl = document.querySelector('nav ul');
+
+                button.addEventListener('click', function () {
+                    navUl.classList.toggle('show');
+                });
+
+                // Close the navigation bar when a menu item is clicked
+                navUl.addEventListener('click', function () {
+                    navUl.classList.remove('show');
+                });
+            });
+        </script>
     </header>
     <section>
-        <div class="section2"><img src="./design-6/image/Banner.png" alt="Banner"></div>
+        <!-- <div class="section2"><img src="./design-6/image/Banner.png" alt="Banner"></div>
         <a class="prev"><img src="./design-6/image/arrow_ic.png" alt=""></a>
-        <a class="next"><img src="./design-6/image/arrow_ic-1.png" alt=""></a>
+        <a class="next"><img src="./design-6/image/arrow_ic-1.png" alt=""></a> -->
 
+        <div class="slider-container">
+            <div class="slider section2">
+                <div class="slide"><img src="./design-6/image/Banner.png" alt="Banner"></div>
+                <div class="slide"><img src="./design-6/image/Banner.png" alt="Banner"></div>
+                <div class="slide"><img src="./design-6/image/Banner.png" alt="Banner"></div>
+            </div>
+        </div>
+        <button class="prev" onclick="prevSlide()"> <img src="./design-6/image/arrow_ic.png" alt=""></button>
+        <button class="next" onclick="nextSlide()"> <img src="./design-6/image/arrow_ic-1.png" alt=""></button>
+        <script>
+            // JavaScript for slider functionality
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                const slider = document.querySelector('.slider');
+                const slideWidth = document.querySelector('.slide').offsetWidth;
+                const newPosition = -index * slideWidth;
+                slider.style.transform = `translateX(${newPosition}px)`;
+                currentIndex = index;
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % 3; // Adjust the number based on the number of slides
+                showSlide(currentIndex);
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + 3) % 3; // Adjust the number based on the number of slides
+                showSlide(currentIndex);
+            }
+        </script>
     </section>
     <section>
         <div class="highlights">
@@ -40,13 +99,13 @@
             </div>
             <div class="highlightsbox">
                 <img src="/design-6/image/download (2).png" alt="img1">
-                <h6>Highest number of company for placement</h6>
-                <p>-by limca book records</p>
+                <h6>Best Student Friendly University</h6>
+                <p>-by Star group</p>
             </div>
             <div class="highlightsbox">
                 <img src="/design-6/image/download (3).png" alt="img1">
-                <h6>Highest number of company for placement</h6>
-                <p>-by limca book records</p>
+                <h6>University with Best Placements</h6>
+                <p>-by WCRC</p>
             </div>
         </div>
     </section>
@@ -94,17 +153,17 @@
                 <h6>you pick the schedule<h6>
             </div>
             <div class="s5box4"><img src="./design-6/image/Offline Mode.png" alt="img">
-                <h4>Flexible classes</h4>
-                <h6>you pick the schedule<h6>
+                <h4>Offline Mode</h4>
+                <h6>Download Classes.<h6>
             </div>
- 
-     
+
+
             <div class="s5box4"><img src="./design-6/image/Educator Help.png" alt="img">
-                <h4>Flexible classes</h4>
-                <h6>you pick the schedule<h6>
+                <h4>Educator Help</h4>
+                <h6>Always get answers<h6>
             </div>
             <div class="s5box4"><img src="/design-6/image/Flexible Classes1.png" alt="img">
-                <h4>Flexible classes</h4>
+                <h4>Flexible Classes</h4>
                 <h6>you pick the schedule<h6>
             </div>
 
@@ -134,10 +193,6 @@
             </div>
         </div>
     </section>
-
-
-
-
 </body>
 
 </html>
