@@ -8,6 +8,8 @@
     <title>EZIHIRE</title>
     <link rel='stylesheet' href='styles.css'>
     <link rel="icon" href="./design-6/image/EZIhire.png" type="png">
+    <link rel="stylesheet" href="./design-6/font-awesome-4.7.0/css/font-awesome.min.css">
+
 
     <!-- Add Slick CSS -->
     <!-- <link rel="stylesheet" type="text/css" href="path/to/slick/slick.css" /> -->
@@ -27,7 +29,7 @@
             <div class="logo">
                 <img src="/design-6/image/EZIhire.png" alt="Logo">
             </div>
-            <button class="tgbtn" id="toggleButton">&#9776;</button>
+            <button class="tgbtn" id="toggleButton"><i class="fa fa-bars" aria-hidden="true"></i></button>
             <ul>
                 <li><a href="#" style="color: rgb(105, 128, 233);"><b>Why Us</b></a></li>
                 <li><a href="#">Technology</a></li>
@@ -64,9 +66,12 @@
                 <div class="slide"><img src="./design-6/image/Banner.png" alt="Banner"></div>
                 <div class="slide"><img src="./design-6/image/Banner.png" alt="Banner"></div>
             </div>
+            <div class="prevnext">
+                <button class="prev" onclick="prevSlide()"> <img src="./design-6/image/arrow_ic.png" alt=""></button>
+                <button class="next" onclick="nextSlide()"> <img src="./design-6/image/arrow_ic-1.png" alt=""></button>
+            </div>
         </div>
-        <button class="prev" onclick="prevSlide()"> <img src="./design-6/image/arrow_ic.png" alt=""></button>
-        <button class="next" onclick="nextSlide()"> <img src="./design-6/image/arrow_ic-1.png" alt=""></button>
+        
         <script>
             // JavaScript for slider functionality
             let currentIndex = 0;
@@ -80,12 +85,12 @@
             }
 
             function nextSlide() {
-                currentIndex = (currentIndex + 1) % 3; // Adjust the number based on the number of slides
+                currentIndex = (currentIndex + 1) % 3;
                 showSlide(currentIndex);
             }
 
             function prevSlide() {
-                currentIndex = (currentIndex - 1 + 3) % 3; // Adjust the number based on the number of slides
+                currentIndex = (currentIndex - 1 + 3) % 3;
                 showSlide(currentIndex);
             }
         </script>
